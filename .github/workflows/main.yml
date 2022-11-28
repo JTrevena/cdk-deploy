@@ -20,6 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Synth stack
-        run: cdk synth
+        run: npx cdk synth
       - name: Show diff
-        run: cdk diff
+        run: npx cdk diff
