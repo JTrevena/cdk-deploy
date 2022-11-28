@@ -21,5 +21,7 @@ jobs:
         run: npm install
       - name: Synth stack
         run: npx cdk synth
+      - name: Bootstrap
+        run: npx cdk bootstrap
       - name: Deploy stack
         run: npx cdk deploy --all --require-approval never
