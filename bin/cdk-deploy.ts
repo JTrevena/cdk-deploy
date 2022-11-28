@@ -8,7 +8,7 @@ export class S3BucketStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const websiteBucket = new s3.Bucket(this, 'WebsiteBucket', {
+    const websiteBucket = new s3.Bucket(this, 'WebsiteBucket2', {
         websiteIndexDocument: 'index.html',
         publicReadAccess: true,
       });
