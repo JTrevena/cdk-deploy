@@ -1,7 +1,6 @@
-This project is an example of deploying a static site to an s3 bucket using AWS CDK. Currently, the deployment can be performed locally using the CLI; the goal of this project is to integrate this step into github actions
+This repo is set up as an example of using AWS CDK alongside github actions to deploy a static site to an s3 bucket. 
 
-## Commands to deploy locally
+`bin/cdk-deploy.ts` gives instructions for the setup of an s3 bucket containing the contents of `dist/` with public view and static site hosting enabled. 
+A github action (defined in `.github/workflows/main.yml`) runs the cdk deployment process according to the instructions in the above file.
 
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+In this way, changes made to the content of this repo is reflected automatically in the deployed version of the site.
