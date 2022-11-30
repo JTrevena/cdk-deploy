@@ -14,7 +14,7 @@ export class S3BucketStack extends cdk.Stack {
       });
       
       new s3deploy.BucketDeployment(this, 'DeployWebsite', {
-        sources: [s3deploy.Source.asset('./dist')],
+        sources: [s3deploy.Source.asset('./example-react-app/build')],
         destinationBucket: websiteBucket,
       });
   }
