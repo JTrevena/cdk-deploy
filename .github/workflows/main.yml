@@ -17,7 +17,9 @@ jobs:
           cd example-react-app
           npm install
       - name: Build react app
-        run: npm run build --if-present
+        run: |
+          cd example-react-app
+          npm run build --if-present
   aws_cdk_deploy:
     needs: build_app
     runs-on: ubuntu-latest
