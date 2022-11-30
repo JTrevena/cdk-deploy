@@ -20,11 +20,11 @@ jobs:
         run: |
           cd example-react-app
           npm run build --if-present
-      - name: Archive built artifact
+      - name: Archive build artifact
         uses: actions/upload-artifact@master
         with:
-          name: dist
-          path: dist
+          name: build
+          path: example-react-app/build
   aws_cdk_deploy:
     needs: build_app
     runs-on: ubuntu-latest
@@ -40,11 +40,11 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: 'us-west-2'
-      - name: Download Artifact
+      - name: Download build artifact
         uses: actions/download-artifact@master
         with:
-          name: dist
-          path: dist
+          name: build
+          path: example-react-app/build
       - name: Install dependencies
         run: npm install
       - name: Synth stack
